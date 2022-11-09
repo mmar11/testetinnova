@@ -20,16 +20,17 @@ function bubbleSort(vetor) {
         if (!change) {
             break
         }
-    } console.log(vetor)
+    }
+    return (vetor)
 }
 
-bubbleSort(vetor)
+console.log(bubbleSort(vetor))
 
 
 
 function verif(array1) {
-    console.log(array1.sort((a, b) => a - b))
+    return (array1.sort((a, b) => a - b))
 }
 
-verif(vetor)
+console.log(verif(vetor))
 

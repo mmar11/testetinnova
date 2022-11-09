@@ -25,21 +25,18 @@ class resultado {
     getVotosValidos() {
 
         let percValidos = (this.#validos / this.#eleitores) * 100
-        console.log(percValidos)
         return percValidos
 
     }
 
     getVotosBrancos() {
         let percBrancos = (this.#brancos / this.#eleitores) * 100
-        console.log(percBrancos)
         return percBrancos
 
     }
 
     getVotosNulos() {
         let percNulos = (this.#nulos / this.#eleitores) * 100
-        console.log(percNulos)
         return percNulos
 
     }
@@ -47,8 +44,8 @@ class resultado {
 
 let result = new resultado(eleitores, validos, brancos, nulos)
 
-result.getVotosValidos()
-result.getVotosBrancos()
-result.getVotosNulos()
+console.log(result.getVotosValidos(),
+    result.getVotosBrancos(),
+    result.getVotosNulos())
 
 

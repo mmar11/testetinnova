@@ -1,6 +1,10 @@
 
 function fatorial(numero) {
 
+
+    if (numero == 0) {
+        return 1
+    }
     let num = numero
     let i = num - 1
 
@@ -9,7 +13,7 @@ function fatorial(numero) {
         i--
 
     }
-    console.log(num)
+    return num
 }
 
-fatorial(6)
+console.log(fatorial(4))
