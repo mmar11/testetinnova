@@ -44,8 +44,10 @@ class resultado {
 
 let result = new resultado(eleitores, validos, brancos, nulos)
 
-console.log(result.getVotosValidos(),
+console.log(
+    result.getVotosValidos(),
     result.getVotosBrancos(),
-    result.getVotosNulos())
+    result.getVotosNulos()
+)
 
 
