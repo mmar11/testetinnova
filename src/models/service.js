@@ -37,8 +37,8 @@ class veiculo {
             ano: this.#ano,
             descricao: this.#descricao,
             vendido: this.#vendido,
-            created: this.#created,
-            updated: this.#updated
+            created: this.#created.toLocaleDateString('pt-br'),
+            updated: this.#updated.toLocaleDateString('pt-br')
         }
 
         return obj
@@ -92,7 +92,7 @@ function editById(id, veiculo, marca, ano, descricao, vendido) {
     carro[0].ano = ano
     carro[0].descricao = descricao
     carro[0].vendido = vendido
-    carro[0].updated = new Date
+    carro[0].updated = (new Date).toLocaleDateString('pt-br')
 
     base[index] = carro[0]
 
@@ -106,7 +106,7 @@ function patchById(id, vendido) {
     let carro = getById(id)
     let index = getIndex(id)
     carro[0].vendido = vendido
-    carro[0].updated = new Date
+    carro[0].updated = (new Date).toLocaleDateString('pt-br')
 
     base[index] = carro[0]
 

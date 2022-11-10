@@ -1,12 +1,9 @@
 import * as f from "../models/service.js"
 
-let indexControl = (req, res, next) => {
-    res.send('index exibir')
-}
-
 let getVeiculos = (req, res, next) => {
-    let ler = f.read()
-    res.send(ler)
+    let consulta = f.read()
+
+    res.send(consulta)
 }
 
 let getVeiculosQuery = (req, res, next) => {
@@ -16,6 +13,7 @@ let getVeiculosQuery = (req, res, next) => {
 let getVeiculosId = (req, res, next) => {
     let id = req.params.id;
     let carro = f.getById(id)
+
     res.send(carro)
 }
 
@@ -57,6 +55,6 @@ let deleteVeiculosId = (req, res, next) => {
 }
 
 export {
-    indexControl, getVeiculos, getVeiculosQuery, getVeiculosId,
+    getVeiculos, getVeiculosQuery, getVeiculosId,
     postVeiculos, putVeiculosId, patchVeiculosId, deleteVeiculosId
 }

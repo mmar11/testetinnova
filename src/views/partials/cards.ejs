@@ -1,0 +1,18 @@
+<% carro.forEach((obj) => { %>
+<div class="card" style="width: 18rem">
+  <img src="../img/carro.jpg" class="card-img-top" alt="..." />
+  <div class="card-body">
+    <h5 class="card-title"><%= obj.veiculo %></h5>
+    <p class="card-text">Descrição: <%= obj.descricao %></p>
+  </div>
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item">Ano: <%= obj.ano %></li>
+    <li class="list-group-item">Cadastrado: <%= obj.created %></li>
+    <li class="list-group-item">Ult. Edição: <%= obj.updated %></li>
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Vender</a>
+    <a href="#" class="card-link">Editar</a>
+  </div>
+</div>
+<% }) %>
