@@ -28,8 +28,8 @@ console.log(bubbleSort(vetor))
 
 
 
-function verif(array1) {
-    return (array1.sort((a, b) => a - b))
+function verif(array) {
+    return (array.sort((a, b) => a - b))
 }
 
 console.log(verif(vetor))
