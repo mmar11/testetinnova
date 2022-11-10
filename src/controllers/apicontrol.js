@@ -14,15 +14,29 @@ let getVeiculosQuery = (req, res, next) => {
 }
 
 let getVeiculosId = (req, res, next) => {
-    res.send('get veículos p id')
+    let id = req.params.id;
+    let carro = f.getById(id)
+    res.send(carro)
 }
 
 let postVeiculos = (req, res, next) => {
-    res.send('cria novo veículos')
+    let base = f.read()
+    let { veiculo, marca, ano, descricao, vendido } = req.body
+    let novoCarro = new f.veiculo(veiculo, marca, ano, descricao, vendido)
+    base.push(novoCarro)
+    f.write(base)
+    let cadastrado = f.getUltimoVeic()
+    res.send(cadastrado)
 }
 
 let putVeiculosId = (req, res, next) => {
-    res.send('edita todo veículo p id')
+    let id = req.params.id;
+    let { veiculo, marca, ano, descricao, vendido } = req.body
+
+    let carro = f.editById(id, veiculo, marca, ano, descricao, vendido)
+
+    res.send(carro)
+
 }
 
 let patchVeiculosId = (req, res, next) => {
