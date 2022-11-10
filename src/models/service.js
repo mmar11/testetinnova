@@ -98,8 +98,43 @@ function editById(id, veiculo, marca, ano, descricao, vendido) {
 
     write(base)
     let carroUpdated = getById(id)
-    console.log(base)
     return carroUpdated
 }
 
-export { veiculo, read, write, getUltimoVeic, getById, getIndex, editById }
+function patchById(id, vendido) {
+    let base = read();
+    let carro = getById(id)
+    let index = getIndex(id)
+    carro[0].vendido = vendido
+    carro[0].updated = new Date
+
+    base[index] = carro[0]
+
+    write(base)
+    let carroUpdated = getById(id)
+    return carroUpdated
+}
+
+function deleteById(id) {
+    let base = read();
+    let index = getIndex(id)
+
+    if (index >= 0) {
+
+        base.splice(index, 1)
+        write(base)
+
+        return {
+            status: 200,
+            msg: 'deleted'
+        }
+    } else {
+        return {
+            status: 400,
+            msg: 'id not found'
+        }
+
+    }
+}
+
+export { veiculo, read, write, getUltimoVeic, getById, getIndex, editById, patchById, deleteById }

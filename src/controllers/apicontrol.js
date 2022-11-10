@@ -40,11 +40,20 @@ let putVeiculosId = (req, res, next) => {
 }
 
 let patchVeiculosId = (req, res, next) => {
-    res.send('edita alguns dados do veículo p id')
+    let id = req.params.id;
+    let vendido = req.body.vendido
+
+    let carro = f.patchById(id, vendido)
+
+    res.send(carro)
+
 }
 
 let deleteVeiculosId = (req, res, next) => {
-    res.send('deleta veículo p id')
+    let id = req.params.id;
+    let carro = f.deleteById(id)
+
+    res.send(carro)
 }
 
 export {
