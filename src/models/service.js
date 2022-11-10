@@ -94,10 +94,12 @@ function editById(id, veiculo, marca, ano, descricao, vendido) {
     carro[0].vendido = vendido
     carro[0].updated = new Date
 
+    base[index] = carro[0]
 
-    console.log(id)
-
-    return carro
+    write(base)
+    let carroUpdated = getById(id)
+    console.log(base)
+    return carroUpdated
 }
 
 export { veiculo, read, write, getUltimoVeic, getById, getIndex, editById }
