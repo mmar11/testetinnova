@@ -55,13 +55,28 @@ function read() {
 
 }
 
+
+function readSemana() {
+    let ler = JSON.parse(fs.readFileSync('src/public/dados/carros.json', { encoding: 'utf-8' }))
+    let hoje = (new Date)
+
+    let semana = ler.filter((ele) => {
+        let criado = ele.created
+        let dataString = criado.split("/");
+        let data2 = new Date(dataString[2], dataString[1] - 1, dataString[0]);
+
+        return (hoje - data2) < (1000 * 60 * 60 * 24 * 7)
+    })
+    return semana;
+
+}
+
 function write(base) {
 
     let veic = JSON.stringify(base)
     fs.writeFileSync('src/public/dados/carros.json', veic)
     return veic
 }
-
 
 function getUltimoVeic() {
     let ler = read()
@@ -137,4 +152,27 @@ function deleteById(id) {
     }
 }
 
-export { veiculo, read, write, getUltimoVeic, getById, getIndex, editById, patchById, deleteById }
+function pesquisa(ano, cor, marca) {
+    let ler = read()
+    console.log(ano)
+
+    let c1 = ler.filter((ele) => {
+        return ele.ano == ano
+    })
+
+    let c2 = c1.filter((ele) => {
+        return ele.marca == marca
+    })
+
+    let c3 = c2.filter((ele) => {
+        return ele.descricao.includes(cor)
+    });
+
+    return c3
+
+}
+
+export {
+    veiculo, read, write, getUltimoVeic, getById,
+    getIndex, editById, patchById, deleteById, readSemana, pesquisa
+}

@@ -7,7 +7,11 @@ let getVeiculos = (req, res, next) => {
 }
 
 let getVeiculosQuery = (req, res, next) => {
-    res.send('get veículos p query param')
+    let { ano, cor, marca } = req.query
+    console.log(ano, cor, marca)
+    let carro = f.pesquisa(ano, cor, marca)
+
+    res.send(carro)
 }
 
 let getVeiculosId = (req, res, next) => {

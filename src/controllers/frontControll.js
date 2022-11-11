@@ -4,9 +4,23 @@ import fetch from 'node-fetch';
 
 
 let indexControl = (req, res, next) => {
-    let carro = f.read()
+    let carro = f.readSemana()
     res.render('index.ejs', { carro })
 }
+
+let pesquisaCont = (req, res, next) => {
+    res.render('pesquisa.ejs')
+}
+
+let resultadoCont = (req, res, next) => {
+    let { ano, cor, marca } = req.query
+    console.log(ano, cor, marca)
+    let carro = f.pesquisa(ano, cor, marca)
+
+    res.render('resultado.ejs', { carro })
+}
+
+
 
 let exibeVeiculos = (req, res, next) => {
     let consulta = f.read()
@@ -36,18 +50,6 @@ let cadastraVeic = (req, res, next) => {
     let carro = f.getUltimoVeic()
     res.render('cadastrado.ejs', { carro })
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 let formControlEd = (req, res, next) => {
     let id = req.params.id
@@ -108,5 +110,5 @@ let deleteId = async (req, res, next) => {
 
 export {
     indexControl, exibeVeiculos, formControl, exibeById, cadastraVeic,
-    formControlEd, editaVeic, venderId, deleteId
+    formControlEd, editaVeic, venderId, deleteId, pesquisaCont, resultadoCont
 }

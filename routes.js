@@ -10,8 +10,8 @@ const upload = multer({ dest: 'uploads/' })
 
 
 //rotas solicitadas na API
-routes.get('/veiculos', c.getVeiculos)
-routes.get('/veiculos?marca={marca}&ano={ano}&cor={cor}', c.getVeiculosQuery)
+routes.get('/veiculo', c.getVeiculos)
+routes.get('/veiculos', c.getVeiculosQuery)
 routes.get('/veiculos/:id', c.getVeiculosId)
 routes.post('/veiculos', c.postVeiculos)
 routes.put('/veiculos/:id', c.putVeiculosId)
@@ -28,6 +28,8 @@ routes.get('/editar/:id', fr.formControlEd)
 routes.post('/editar/:id', upload.none(), fr.editaVeic)
 routes.get('/vender/:id', fr.venderId)
 routes.get('/delete/:id', fr.deleteId)
+routes.get('/pesquisa', fr.pesquisaCont)
+routes.get('/resultado', upload.none(), fr.resultadoCont)
 
 
 
