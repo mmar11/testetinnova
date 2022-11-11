@@ -5,9 +5,7 @@
 
 <br />
 <div align="center">
-  <a href="https://github.com/mmar11/testetinnova">
-    <img src="
-  </a>
+ 
 
 <h3 align="center">Cadastro de Veículos Para Teste Técnico</h3>
 
@@ -59,7 +57,7 @@ ENDPOINTS
   
 3- GET - '/veiculo/{id}' - Permite a consulta de um veículo individual via url
 
-4- POST - Permite o cadastro de um novo registro na base de dados:
+4- POST - '/veiculos' - Permite o cadastro de um novo registro na base de dados:
 Parametros esperados:   {
     "veiculo": "xxxxxxx",
     "marca": "xxxxxxx",
@@ -67,7 +65,7 @@ Parametros esperados:   {
     "descricao": "xxxxxxxxxxxxxxxxxx",
     "vendido": "true",
    }
-5- PUT - Permite a alteração por completo do registro 
+5- PUT - '/veiculos/{id}' - Permite a alteração por completo do registro 
 Parametros esperados:   {
     "veiculo": "xxxxxxx",
     "marca": "xxxxxxx",
@@ -76,7 +74,7 @@ Parametros esperados:   {
     "vendido": "true",
    }
   
-  6- PATCH - Permite informar se o veículo foi vendido e atualizar o banco.
+  6- PATCH - '/veiculos/{id}' Permite informar se o veículo foi vendido e atualizar o banco.
 Parametros esperados:   {
     "veiculo": "xxxxxxx",
     "marca": "xxxxxxx",
@@ -86,7 +84,7 @@ Parametros esperados:   {
    }
    
 
-  7- DELETE - Permite deletar qualquer registro da base.
+  7- DELETE - '/veiculos/{id}' Permite deletar qualquer registro da base.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -94,9 +92,6 @@ Parametros esperados:   {
 
 
 ## Sugestões são sempre bem vindas!!
-
-
-
 
 
 
