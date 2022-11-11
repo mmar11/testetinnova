@@ -18,7 +18,7 @@
 
     <form
       id="cadastro"
-      action="/cadastrar"
+      action="/editar/<%- carro[0].id %>"
       method="POST"
       enctype="multipart/form-data"
     >
@@ -29,6 +29,7 @@
           id="veiculo"
           name="veiculo"
           placeholder="Veículo"
+          value="<%- carro[0].veiculo %>"
           required
         />
         <label for="floatingInput">Veículo</label>
@@ -37,12 +38,13 @@
       <div id="linha-2-form">
         <div class="form-floating mb-3">
           <input
+            required
             type="number"
             class="form-control"
             id="ano"
             placeholder="ano"
             name="ano"
-            required
+            value="<%- carro[0].ano %>"
           />
           <label for="floatingInput">ano</label>
         </div>
@@ -79,6 +81,7 @@
           id="floatingInput"
           placeholder="name@example.com"
           name="descricao"
+          value="<%- carro[0].descricao %>"
           required
         />
         <label for="floatingInput">Descrição</label>

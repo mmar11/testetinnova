@@ -21,13 +21,13 @@ routes.delete('/veiculos/:id', c.deleteVeiculosId)
 //rotas auxiliares / frontend
 routes.get('/', fr.indexControl)
 routes.get('/exibeveic', fr.exibeVeiculos)
-
-
-
+routes.post('/exibeveicid', upload.none(), fr.exibeById)
 routes.get('/cadastrar', fr.formControl)
-
-
-
+routes.post('/cadastrar', upload.none(), fr.cadastraVeic)
+routes.get('/editar/:id', fr.formControlEd)
+routes.post('/editar/:id', upload.none(), fr.editaVeic)
+routes.get('/vender/:id', fr.venderId)
+routes.get('/delete/:id', fr.deleteId)
 
 
 

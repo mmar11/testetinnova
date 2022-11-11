@@ -7,12 +7,12 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Ano: <%= obj.ano %></li>
-    <li class="list-group-item">Cadastrado: <%= obj.created %></li>
+    <li class="list-group-item">Vendido: <%= obj.vendido %></li>
     <li class="list-group-item">Ult. Edição: <%= obj.updated %></li>
   </ul>
   <div class="card-body">
-    <a href="#" class="card-link">Vender</a>
-    <a href="#" class="card-link">Editar</a>
+    <a href="/vender/<%= obj.id %>" class="card-link classa">Vender</a>
+    <a href="/editar/<%= obj.id %>" class="card-link classa">Editar</a>
   </div>
 </div>
 <% }) %>

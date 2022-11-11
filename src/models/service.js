@@ -66,7 +66,7 @@ function write(base) {
 function getUltimoVeic() {
     let ler = read()
     let ultimo = ler[ler.length - 1]
-    return ultimo
+    return [ultimo]
 }
 
 function getById(id) {
