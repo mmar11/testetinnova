@@ -58,6 +58,7 @@ ENDPOINTS
 3- GET - '/veiculo/{id}' - Permite a consulta de um veículo individual via url
 
 4- POST - '/veiculos' - Permite o cadastro de um novo registro na base de dados:
+
 Parametros esperados:   {
     "veiculo": "xxxxxxx",
     "marca": "xxxxxxx",
@@ -65,6 +66,9 @@ Parametros esperados:   {
     "descricao": "xxxxxxxxxxxxxxxxxx",
     "vendido": "true",
    }
+   !! Importante enviar todos os dados como string, inclusive a informação de vendido
+   
+   
 5- PUT - '/veiculos/{id}' - Permite a alteração por completo do registro 
 Parametros esperados:   {
     "veiculo": "xxxxxxx",
@@ -73,6 +77,8 @@ Parametros esperados:   {
     "descricao": "xxxxxxxxxxxxxxxxxx",
     "vendido": "true",
    }
+   !! Importante enviar todos os dados como string, inclusive a informação de vendido
+   
   
   6- PATCH - '/veiculos/{id}' Permite informar se o veículo foi vendido e atualizar o banco.
 Parametros esperados:   {
