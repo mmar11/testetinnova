@@ -173,7 +173,70 @@ function pesquisa(ano, cor, marca) {
 }
 
 
+function geraRel() {
+    let ler = read()
+    let inicial = {
+        naovendidos: 0,
+        id_estoque: [],
+        fabricacao: {
+            antes_de_2000: 0,
+            '2000': 0,
+            '2010': 0,
+            '2020': 0
+        },
+        fabricante: {
+            volksWagen: 0,
+            ford: 0,
+            honda: 0,
+            toyota: 0,
+            fiat: 0,
+            chevrolet: 0
 
+        }
+    };
+
+
+    let rel = ler.reduce((acc, ele) => {
+
+        switch (ele.marca) {
+            case 'Toyota': acc.fabricante.toyota++
+                break;
+            case 'Volkswagen': acc.fabricante.volksWagen++
+                break;
+            case 'Fiat': acc.fabricante.fiat++
+                break;
+            case 'Honda': acc.fabricante.honda++
+                break;
+            case 'Ford': acc.fabricante.ford++
+                break;
+            case 'Chevrolet': acc.fabricante.chevrolet++
+                break;
+            default:
+        }
+
+        if (ele.vendido == false) {
+            acc.naovendidos++;
+            acc.id_estoque.push(ele.id)
+
+        }
+
+        if (ele.ano >= 2020) {
+            acc.fabricacao[2020]++
+        } else if (ele.ano >= 2010) {
+            acc.fabricacao[2010]++
+        } else if (ele.ano >= 2000) {
+            acc.fabricacao[2000]++
+        } else {
+            acc.fabricacao.antes_de_2000++
+        }
+
+        return acc
+
+    }, inicial);
+
+    console.log(rel)
+
+}
 
 
 export {
