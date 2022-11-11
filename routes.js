@@ -31,6 +31,7 @@ routes.get('/vender/:id', fr.venderId)
 routes.get('/delete/:id', fr.deleteId)
 routes.get('/pesquisa', fr.pesquisaCont)
 routes.get('/resultado', upload.none(), fr.resultadoCont)
+routes.get('/relatorio', fr.relatorio)
 routes.get('/teste', teste)
 
 
