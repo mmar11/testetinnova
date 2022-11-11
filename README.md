@@ -32,9 +32,9 @@
 ## Sobre o Projeto
 
 O desenvolvimento do projeto foi feito com base no Javascript com o EJS engine view e utilizando uma estrutura de API e de dados JSON para organização.
-O objetivo foi construir tanto o projeto competo, backend e frontend.<br />
+O objetivo foi construir o projeto competo, backend e frontend.<br />
 
-Backend: Desenvolvido em Express - Node.js com as rotas configuradas conforme a demanda do usuário.
+Backend: Desenvolvido em Express - Node.js com as rotas configuradas conforme a demanda do cliente.
 
 Frontend: Desenvolvido em HTML - CSS - Javascript para que seja simples e intuitivo, reduzindo a chance de erros do usuário.
 
@@ -53,7 +53,8 @@ ENDPOINTS
 
 2- GET - '/veiculos' - Permite a consulta de veículos cadastrados via req.query
   
-  Parametros esperados: { ano: XXXX, cor: 'xxxxxxx' , marca: 'xxxxxxx'}
+  Parametros esperados: { ano: NNNN, cor: 'xxxxxxx' , marca: 'xxxxxxx'}
+  
   
 3- GET - '/veiculo/{id}' - Permite a consulta de um veículo individual via url
 
@@ -82,11 +83,7 @@ Parametros esperados:   {
   
   6- PATCH - '/veiculos/{id}' Permite informar se o veículo foi vendido e atualizar o banco.
 Parametros esperados:   {
-    "veiculo": "xxxxxxx",
-    "marca": "xxxxxxx",
-    "ano": XXXX,
-    "descricao": "xxxxxxxxxxxxxxxxxx",
-    "vendido": "true",
+    "vendido": "true"
    }
    
 
