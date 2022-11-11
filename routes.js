@@ -2,6 +2,7 @@ import { Router } from "express"
 const routes = Router()
 import * as c from './src/controllers/apicontrol.js'
 import * as fr from './src/controllers/frontControll.js'
+import teste from './testeautomatizado.js'
 
 
 import multer from 'multer'
@@ -30,6 +31,7 @@ routes.get('/vender/:id', fr.venderId)
 routes.get('/delete/:id', fr.deleteId)
 routes.get('/pesquisa', fr.pesquisaCont)
 routes.get('/resultado', upload.none(), fr.resultadoCont)
+routes.get('/teste', teste)
 
 
 
