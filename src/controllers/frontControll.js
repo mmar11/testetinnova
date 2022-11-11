@@ -21,11 +21,10 @@ let resultadoCont = (req, res, next) => {
 }
 
 
-
 let exibeVeiculos = (req, res, next) => {
     let consulta = f.read()
 
-    res.render('relatorios.ejs', { consulta })
+    res.render('exibeveic.ejs', { consulta })
 }
 
 let exibeById = (req, res, next) => {
@@ -43,7 +42,6 @@ let cadastraVeic = (req, res, next) => {
     let base = f.read()
     let { veiculo, marca, ano, descricao, vendido } = req.body
     let novoCarro = new f.veiculo(veiculo, marca, ano, descricao, vendido)
-    console.log(novoCarro)
     base.push(novoCarro)
     f.write(base)
 
@@ -108,11 +106,10 @@ let deleteId = async (req, res, next) => {
 }
 
 
-let relatorio = () => {
+let relatorio = (req, res, next) => {
     let rel = f.geraRel()
-    // res.render('relatorio.ejs', { rel })
-    res.send(rel)
 
+    res.render('relatorios.ejs', { rel })
 }
 
 

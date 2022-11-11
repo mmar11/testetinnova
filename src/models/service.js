@@ -179,10 +179,10 @@ function geraRel() {
         naovendidos: 0,
         id_estoque: [],
         fabricacao: {
-            antes_de_2000: 0,
-            '2000': 0,
-            '2010': 0,
-            '2020': 0
+            'Antes de 2000': 0,
+            'Década de 2000': 0,
+            'Década de 2010': 0,
+            'Década de 2020': 0
         },
         fabricante: {
             volksWagen: 0,
@@ -214,27 +214,27 @@ function geraRel() {
             default:
         }
 
-        if (ele.vendido == false) {
+        if (ele.vendido == 'false') {
             acc.naovendidos++;
-            acc.id_estoque.push(ele.id)
+            acc.id_estoque.push(ele)
 
-        }
+        } else { }
 
         if (ele.ano >= 2020) {
-            acc.fabricacao[2020]++
+            acc.fabricacao['Década de 2020']++
         } else if (ele.ano >= 2010) {
-            acc.fabricacao[2010]++
+            acc.fabricacao['Década de 2010']++
         } else if (ele.ano >= 2000) {
-            acc.fabricacao[2000]++
+            acc.fabricacao['Década de 2000']++
         } else {
-            acc.fabricacao.antes_de_2000++
+            acc.fabricacao['Antes de 2000']++
         }
 
         return acc
 
     }, inicial);
 
-    console.log(rel)
+    return rel
 
 }
 

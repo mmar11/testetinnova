@@ -7,7 +7,11 @@
   </div>
   <ul class="list-group list-group-flush">
     <li class="list-group-item">Ano: <%= obj.ano %></li>
-    <li class="list-group-item">Vendido: <%= obj.vendido %></li>
+    <% if(obj.vendido == 'false'){ %>
+    <li class="list-group-item">Vendido: <%= "não" %></li>
+    <% } else {%>
+    <li class="list-group-item">Vendido: <%= "sim" %></li>
+    <% } %>
     <li class="list-group-item">Ult. Edição: <%= obj.updated %></li>
   </ul>
   <div class="card-body">

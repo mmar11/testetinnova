@@ -76,3 +76,31 @@ img {
   max-width: 200px;
   margin: auto;
 }
+
+/* relatorios */
+
+.block-itens {
+  display: flex;
+  justify-content: center;
+}
+
+.tdh5 {
+  border: 2px solid black;
+  padding: 5px;
+  margin: 2px;
+}
+
+.block-rel {
+  display: grid;
+  grid-template-columns: 30% 30% 30%;
+  gap: 5px;
+  justify-content: center;
+}
+
+.block-rel-up {
+  text-align: center;
+}
+
+.mainrel {
+  text-align: center;
+}
