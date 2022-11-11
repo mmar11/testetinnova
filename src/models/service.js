@@ -173,40 +173,7 @@ function pesquisa(ano, cor, marca) {
 }
 
 
-function geraRel() {
-    let ler = read()
 
-    const initialValue = {
-        naovendidos: 0,
-        fabricacao: {
-            1990: 0,
-            2000: 0,
-            2010: 0,
-            2020: 0
-        },
-        fabricante: {
-            volksWagen: 0,
-            ford: 0,
-            honda: 0,
-            toyota: 0,
-            fiat: 0,
-            chevrolet: 0
-
-        }
-    };
-    const reduce = ler.reduce((acc, ele) => {
-
-
-
-    }
-        , initialValue);
-
-    console.log(sumWithInitial);
-    // expected output: 10
-
-
-
-}
 
 
 export {

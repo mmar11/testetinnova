@@ -108,15 +108,10 @@ let deleteId = async (req, res, next) => {
 }
 
 
-let relatorio = () => {
-    let rel = f.geraRel()
-    // res.render('relatorio.ejs', { rel })
-    res.send(rel)
 
-}
 
 
 export {
     indexControl, exibeVeiculos, formControl, exibeById, cadastraVeic,
-    formControlEd, editaVeic, venderId, deleteId, pesquisaCont, resultadoCont, relatorio
+    formControlEd, editaVeic, venderId, deleteId, pesquisaCont, resultadoCont
 }
